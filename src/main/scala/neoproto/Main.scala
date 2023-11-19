@@ -39,7 +39,7 @@ object Main extends App:
     ProtoPerson("Navid", Some(ProtoAddress("Some street")), Some(ProtoPaymentMethod.Cash(12)))
   val badProto  = ProtoPerson("Navid", None, Some(ProtoPaymentMethod.Cash(12)))
 
-  println(reader.read(goodProto)) // Success(Person(Name(Navid),Address(Some street),Cash(12)))
-  println(
-    reader.read(badProto)
-  )                               // Failure(NonEmptyList(Property location on type Person is required but is missing from the input!))
+  println(reader.read(goodProto))
+  // Success(Person(Name(Navid),Address(Some street),Cash(12)))
+  println(reader.read(badProto))
+  // Failure(NonEmptyList(Property location on type Person is required but is missing from the input!))
